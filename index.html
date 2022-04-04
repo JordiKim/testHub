@@ -23,7 +23,18 @@
             user.email = js_email.value;
             user.password = js_pwd.value;
 
-            console.log(user);
+            if(user.email === "" && user.password === ""){
+                alert('以上資料不得為空');
+                return;
+            }
+            if(user.email === ""){
+                alert('帳號不得為空');
+                return;
+            }
+            if(user.password === ""){
+                alert('請輸入密碼');
+                return;
+            }
             sendData(user);
         });
 
