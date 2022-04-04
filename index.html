@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>實作axios DOM表單註冊流程</title>
+</head>
+<body>
+    <input type="text" class="js_email" placeholder="email">
+    <input type="password" class="js_pwd" placeholder="password">
+
+    <button type="button" class="js_btn">送出</button>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        let js_email = document.querySelector('.js_email');
+        let js_pwd = document.querySelector('.js_pwd');
+        let btn = document.querySelector('.js_btn');
+
+        let user = {};
+
+        btn.addEventListener('click', () => {
+            user.email = js_email.value;
+            user.password = js_pwd.value;
+
+            console.log(user);
+            sendData(user);
+        });
+
+        function sendData(){
+            axios.post('https://hexschool-tutorial.herokuapp.com/api/signup', user)
+            .then(function (response) {
+                console.log(response);
+                alert(response.data.message);
+            })
+            .catch(function (error) {
+                console.log(error);
+                alert(response.data.message);
+            });
+        };
+    </script>
+</body>
+</html>
