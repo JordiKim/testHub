@@ -1,0 +1,23 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.box {
+  margin: 0 auto;
+  max-width: 400px;
+  width: 400px;
+}
+
+.email {
+  display: block;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.pwd {
+  display: block;
+  margin-bottom: 40px;
+  width: 100%;
+}
+/*# sourceMappingURL=all.css.map */
